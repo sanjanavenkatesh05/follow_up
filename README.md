@@ -107,3 +107,12 @@ python manage.py test tracker
 ### Security
 -   **clinic_code** and **public_token** are generated using Python's `secrets` module for cryptographic strength.
 -   **Authorization**: Views explicitly check `request.user.userprofile.clinic` against the object's clinic to prevent unauthorized access.
+
+## Screenshots
+
+![Screenshot 1](screenshots/Screenshot%202026-01-16%20173342.png)
+![Screenshot 2](screenshots/Screenshot%202026-01-16%20173438.png)
+![Screenshot 3](screenshots/Screenshot%202026-01-16%20173444.png)
+![Screenshot 4](screenshots/Screenshot%202026-01-16%20173452.png)
+![Screenshot 5](screenshots/Screenshot%202026-01-16%20173459.png)
+

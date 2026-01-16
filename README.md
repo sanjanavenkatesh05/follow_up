@@ -115,4 +115,8 @@ python manage.py test tracker
 ![Screenshot 3](screenshots/Screenshot%202026-01-16%20173444.png)
 ![Screenshot 4](screenshots/Screenshot%202026-01-16%20173452.png)
 ![Screenshot 5](screenshots/Screenshot%202026-01-16%20173459.png)
+![Testing Results](screenshots/Screenshot%202026-01-16%20174119.png)
+![Public View Example](screenshots/public_view_example.png)
+
+
 

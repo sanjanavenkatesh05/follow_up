@@ -1,0 +1,55 @@
+<h2>Follow-up Dashboard</h2>
+{% if messages %}
+{% for message in messages %}
+<div
+    style="padding: 10px; margin-bottom: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<div style="margin-bottom: 20px;">
+    <p><strong>Total:</strong> {{ total_count }} | <strong>Pending:</strong> {{ pending_count }} |
+        <strong>Done:</strong> {{ done_count }}
+    </p>
+    <!count of total followups, pending followups, done followups>
+</div>
+<a href="{% url 'create_followup' %}">Create New Follow-up</a>
+<form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit"
+        style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer;">Logout</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Views</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for followup in followups %}
+        <tr>
+            <td>{{ followup.patient_name }}</td>
+            <td>{{ followup.due_date }}</td>
+            <td>{{ followup.status }}</td>
+            <td>{{ followup.view_count }}</td>
+            <td>
+                <a href="{% url 'edit_followup' followup.pk %}">Edit</a>
+                <a href="{% url 'public_followup' followup.public_token %}">View Public Link</a>
+                <form action="{% url 'mark_done' followup.pk %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Mark Done</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No follow-ups found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

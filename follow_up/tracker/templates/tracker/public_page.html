@@ -1,0 +1,8 @@
+<h2>Public Follow-up View</h2>
+<p><strong>Patient Name:</strong> {{ followup.patient_name }}</p>
+<p><strong>Status:</strong> {{ followup.status }}</p>
+<p><strong>Due Date:</strong> {{ followup.due_date }}</p>
+
+{% if followup.notes %}
+<p><strong>Notes:</strong> {{ followup.notes }}</p>
+{% endif %}
